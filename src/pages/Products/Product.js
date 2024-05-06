@@ -5,6 +5,8 @@ import { ActivityIndicator } from "react-native";
 import axios from "axios";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import useFetch from "../../hooks/useFetch/useFetch";
+import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error/Error";
 
 export default function Product() {
 
@@ -15,11 +17,11 @@ export default function Product() {
   };
 
   if (loading) {
-    return <ActivityIndicator size={"large"} />;
+    return <Loading/>;
   }
 
   if (error) {
-    return <Text>{error.message}</Text>;
+    return <Error/>;
   }
 
   return (
