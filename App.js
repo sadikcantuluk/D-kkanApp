@@ -9,9 +9,22 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Product" component={Product} />
-        <Stack.Screen name="Detail" component={Detail} />
+      <Stack.Navigator screenOptions={{
+        headerStyle:{
+          backgroundColor:"#5BBCFF",
+        },
+        headerTitleStyle:{
+          fontSize:20,
+          fontWeight:'bold',
+          color:'#EEF7FF'
+        }
+      }}>
+        <Stack.Screen name="Product" component={Product} options={{
+          title:"Dükkan"
+        }}/>
+        <Stack.Screen name="Detail" component={Detail} options={{
+          title:"Ürün Detayları"
+        }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
